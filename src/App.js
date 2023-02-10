@@ -1,25 +1,24 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  let [sombra, setSombra] = useState("green")
+
+
+
+  return <div className='contenedor'>
+    <div className='d-flex justify-content-center'>
+        <div className='contenedor-palo'></div>
     </div>
-  );
+    <div className='contenedor-semaforo'>
+      
+    <span onClick={() => setSombra("red")} className={sombra === "red" ? "sombra-luz" : ""}  type="button" id='auida1'></span>
+    <span onClick={() => setSombra("orenge")} className={sombra === "orenge" ? "sombra-luz" : ""}  type="button" id='auida2'></span>
+    <span onClick={() => setSombra("green")} className={sombra === "green" ? "sombra-luz" : ""}  type="button" id='auida3'></span>
+    
+    </div>
+    
+  </div>
 }
 
 export default App;
